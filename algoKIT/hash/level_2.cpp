@@ -1,3 +1,4 @@
+// 폰켓몬
 // 정확성: 40.0
 // 합계: 40.0 / 100.0
 
@@ -12,10 +13,11 @@ int solution(vector<int> nums)
     
     size_prev = size(nums);
     
+    sort(nums.begin(), nums.end());
     nums.erase(unique(nums.begin(),nums.end()),nums.end());
     size_fin = size(nums);
     
-    answer = ((size_prev/2) > size_fin) ? size_fin : (size_prev/2);
+    answer = ((size_prev/2) >= size_fin) ? size_fin : (size_prev/2);
     
     return answer;
 }
